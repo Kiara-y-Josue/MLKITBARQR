@@ -19,11 +19,19 @@ import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+
+
+
 import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.face.Face;
 import com.google.mlkit.vision.face.FaceDetection;
 import com.google.mlkit.vision.face.FaceDetector;
 import com.google.mlkit.vision.face.FaceDetectorOptions;
+
+import com.google.mlkit.vision.label.ImageLabel;
+import com.google.mlkit.vision.label.ImageLabeler;
+import com.google.mlkit.vision.label.ImageLabeling;
+import com.google.mlkit.vision.label.defaults.ImageLabelerOptions;
 import com.google.mlkit.vision.text.Text;
 import com.google.mlkit.vision.text.TextRecognition;
 import com.google.mlkit.vision.text.TextRecognizer;
@@ -131,8 +139,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         recognizer.process(image)
                 .addOnSuccessListener(this)
-                .addOnFailureListener(this);
-}
+                .addOnFailureListener(this);}
+
 
     @Override
     public void onSuccess(Text text) {
@@ -154,4 +162,26 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         }
         txtResults.setText(resultados);
     }
+    public void Labeling(View  v) {
+
+    InputImage image = InputImage.fromBitmap(mSelectedImage, 0);
+    ImageLabeler labeler =          ImageLabeling.getClient(ImageLabelerOptions.DEFAULT_OPTIONS);
+
+    labeler.process(image)
+            	.addOnSuccessListener(new OnSuccessListener<List<ImageLabel>>() {
+                	@Override
+                public void onSuccess(List<ImageLabel> labels) {
+                    String resultados = "";
+
+                    for (ImageLabel label : labels)
+                             resultados = resultados + label.getText() + " " + label.getConfidence() + "%\n";
+                    
+                    txtResults.setText(resultados);
+                }
+
+            })
+            .addOnFailureListener(this);
+
+}
+
 }
