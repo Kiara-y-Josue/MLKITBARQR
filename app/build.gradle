@@ -18,6 +18,7 @@ android {
 
     buildTypes {
         release {
+            debuggable false
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -44,6 +45,7 @@ dependencies {
     implementation 'com.google.mlkit:image-labeling:17.0.8'
     implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
     implementation 'com.google.firebase:firebase-ml-vision-image-label-model:20.0.1'
+    implementation 'com.google.mlkit:barcode-scanning:17.0.3'
 
 
 }
