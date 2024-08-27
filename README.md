@@ -1,8 +1,8 @@
-# Cloud Vision con Machine Learning Kit de Firebase
-<img src="https://github.com/cristianzambrano/MLKit_IS2024_2/blob/master/Main.png" height=500 width=230>
-<h2>Text Recognition</h2>
-<img src="https://github.com/cristianzambrano/MLKit_IS2024_2/blob/master/OCR.png" height=500 width=230>
-<h2>Face Detection</h2>
-<img src="https://github.com/cristianzambrano/MLKit_IS2024_2/blob/master/FaceDetection.png" height=500 width=230>
-
+# IMPLEMENTAR LA DETECCIÓN DE OBJETOS CON GOOGLE ML KIT
+<img src="https://github.com/Kiara-y-Josue/MLKITBARQR/blob/master/gradle/wrapper/cap5.jpg" height=500 width=230>
+<h2>Interfaz de usuario</h2>
+<img src="https://github.com/Kiara-y-Josue/MLKITBARQR/blob/master/gradle/wrapper/cap6.jpg" height=500 width=230>
+<h2>Deteccion QR</h2>
+<img src="https://github.com/Kiara-y-Josue/MLKITBARQR/blob/master/gradle/wrapper/cap7.jpg" height=500 width=230>
+<h2>Deteccion Codigo de Barras</h2>
 
